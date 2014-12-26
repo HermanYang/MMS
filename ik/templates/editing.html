@@ -1,0 +1,20 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>{{ knowledge.description }}</h1>
+		<a href="/knowledge_list">Back TO List</a>
+		<a href="/knowledge_deletion/{{ knowledge.id }}">Delete</a>
+		<form method="post" action="/knowledge_editing/{{ knowledge.id }}">
+			{% csrf_token %}
+
+			{% for image in image_list %}
+			<img style="width:100px; height:100px;"src="{{ image.url }}"/>
+			<input name="related_image" value="{{ image.id }}" type="checkbox" {{ image.related }} />
+			{% endfor %}
+
+			<input type="submit" value="Modify"/>
+		</form>
+
+	</body>
+</html>

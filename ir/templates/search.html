@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Image Search</title
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+
+		<form method="post" action="image_search" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="container">
+				<div class="row" style="margin-top:300px;">
+					<div class="col-lg-3"></div>
+					<div class="col-lg-5"><input class="form-control filestyle" name="search_image" type="file"/></div>
+					<div class="col-lg-3"><input class="btn" type="submit" value="Search"/></div>
+					<div class="col-lg-1"></div>
+				</div>
+				<div class="row"><br></div>
+				<div class="row">
+					<div class="col-lg-4"></div>
+					<div class="col-lg-5">
+						<label for="sift" class="radio-inline"><input id="sift" name="feature_algorithm" value="sift" type="radio" checked />SIFT</label>				
+						<label for="sift_lfsr" class="radio-inline"><input id="sift_lfsr" name="feature_algorithm" value="sift_lfsr" type="radio" />SIFT_SRLF</label>
+						<label for="surf" class="radio-inline"><input id="surf" name="feature_algorithm" value="surf" type="radio" />SURF</label>	
+						<label for="surf_lfsr" class="radio-inline"><input id="surf_lfsr" name="feature_algorithm" value="surf_lfsr" type="radio" />SURF_SRLF</label>
+					</div>
+					<div class="col-lg-3"></div>
+				</div>
+			</div><!-- /container -->
+
+		</form>
+
+	</body>
+</html>

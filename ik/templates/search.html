@@ -1,0 +1,25 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<form method="post" action="image_search" enctype="multipart/form-data">
+			{% csrf_token %}
+			<input name="search_image" type="file"/>
+
+			<label for="sift">SIFT</label>
+			<input id="sift" name="feature_algorithm" value="sift" type="radio" checked />
+
+			<label for="sift_lfsr">SIFT_LFSR</label>
+			<input id="sift_lfsr" name="feature_algorithm" value="sift_lfsr" type="radio" />
+
+			<label for="surf">SURF</label>
+			<input id="surf" name="feature_algorithm" value="surf" type="radio" />
+
+			<label for="surf_lfsr">SURF_LFSR</label>
+			<input id="surf_lfsr" name="feature_algorithm" value="surf_lfsr" type="radio" />
+
+			<input type="submit" value="Search"/>
+		</form>
+	</body>
+</html>
