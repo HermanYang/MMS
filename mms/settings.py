@@ -38,6 +38,7 @@ INSTALLED_APPS = (
 		'django.contrib.staticfiles',
 		'ir',
 		'ik',
+		'ikr',
 		)
 
 MIDDLEWARE_CLASSES = (
@@ -92,6 +93,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 STATICFILES_DIRS = (
 		os.path.join(BASE_DIR, 'ir', 'statics'),
 		os.path.join(BASE_DIR, 'ik', 'statics'),
+		os.path.join(BASE_DIR, 'ikr', 'statics'),
 		)
 
 MEDIA_URL = '/media/'
@@ -100,4 +102,5 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 TEMPLATE_DIRS = (
 		os.path.join(BASE_DIR, 'ir', 'templates'),
 		os.path.join(BASE_DIR, 'ik', 'templates'),
+		os.path.join(BASE_DIR, 'ikr', 'templates'),
 		)

@@ -3,7 +3,7 @@
 	</head>
 	<body>
 		<h1>{{ knowledge.description }}</h1>
-		<a href="/knowledge_list">Back TO List</a>
+		<a href="/knowledge_list">Back To List</a>
 		<a href="/knowledge_deletion/{{ knowledge.id }}">Delete</a>
 		<form method="post" action="/knowledge_editing/{{ knowledge.id }}">
 			{% csrf_token %}

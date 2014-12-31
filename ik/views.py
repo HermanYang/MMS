@@ -122,6 +122,7 @@ def register_images(request):
 	file_list =  os.listdir(path)
 
 	for file in file_list:
+		print file
 		image = Image(name = file)
 		image.save()
 

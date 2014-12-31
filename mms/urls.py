@@ -19,6 +19,11 @@ urlpatterns += patterns('',
     url(r'^knowledge_deletion/(?P<id>\d+)$', 'ik.views.deletion'),
 )
 
+urlpatterns += patterns('',
+    url(r'^image_knowledge_search$', 'ikr.views.search'),
+    url(r'^image_knowledge_search_result/(?P<algoritham>\w+)/(?P<file>\w+.\w+)$', 'ikr.views.search_result'),
+)
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

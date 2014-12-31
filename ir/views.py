@@ -44,11 +44,12 @@ def search_result(request, algoritham, file):
 
 		HOME = os.getenv('HOME')
 		IMAGE_RETRIEVAL_SYSTEM_BACKEND_PATH = os.getenv('IMAGE_RETRIEVAL_SYSTEM_BACKEND_PATH')
+		IMAGE_RETRIEVAL_SYSTEM_DATA_PATH = os.getenv('IMAGE_RETRIEVAL_SYSTEM_DATA_PATH')
 
 		path = os.path.join(MEDIA_ROOT, 'images', filename + extension)
 
 		output_path = os.path.join( HOME, 'tmp')
-		config_file = os.path.join(IMAGE_RETRIEVAL_SYSTEM_BACKEND_PATH, 'config', 'voctree_{0}.config'.format(feature_algorithm))
+		config_file = os.path.join(IMAGE_RETRIEVAL_SYSTEM_DATA_PATH, 'voctree_config', '{0}'.format(feature_algorithm))
 		query_bash = os.path.join(IMAGE_RETRIEVAL_SYSTEM_BACKEND_PATH, 'query.sh')
 
 		query_command = '{query_bash} {feature_algorithm} {image_id} {image_path} {voctree_config_file} {output_path}'.format(
