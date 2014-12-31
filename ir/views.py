@@ -15,7 +15,7 @@ def search(request):
 	args= {}
 
 	if request.method == 'GET':
-		return render(request, 'search.html', context_instance = RequestContext(request))
+		return render(request, 'image_search.html', context_instance = RequestContext(request))
 
 	if request.method == 'POST':
 		feature_algorithm = request.POST['feature_algorithm']
@@ -81,4 +81,4 @@ def search_result(request, algoritham, file):
 		args['image_list'] = image_list
 		args['original_image_url'] = '/media/images/{0}'.format(file)
 
-		return render(request, 'search_result.html', args, context_instance = RequestContext(request))
+		return render(request, 'image_search_result.html', args, context_instance = RequestContext(request))
